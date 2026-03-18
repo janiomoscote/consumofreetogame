@@ -1,6 +1,7 @@
 
 
 import Image from "next/image";
+import Games from "../components/Games";
 
 
 
@@ -29,6 +30,8 @@ export default async function Home() {
         <p className="text-sm text-gray-500">Genre: {game.genre}</p>
       </div>
     ))}
+
+    <Games games={games}/>
   </div>
    
   );
