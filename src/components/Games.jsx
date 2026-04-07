@@ -8,8 +8,8 @@ function Games({ games }, any) {
      <ul>
       {games.map((game, any) => (
         <Link  key={game.id} href={`/game/${game.id}`}>
-        <li onClick={() => alert(game.title)} className="bg-slate-400 mb-2 p-4 rounded-md flex justify-between">
-          
+        <li className="bg-slate-400 mb-2 p-4 rounded-md flex justify-between">
+          onClick={() => alert(game.title)}
           <div>
             <h5 className="font-bold">{game.id}: {game.title} {game.genre}</h5>
             <p className="text-slate-950"> Desarrollador: {game.developer} </p>

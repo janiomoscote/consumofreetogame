@@ -1,13 +1,15 @@
 // app/actions.ts
-'use server';
+'use client';
 
-export async function submitForm(formData: FormData) {
+async function sendData(formData: FormData) {
   const nombre = formData.get('nombre');
-  const email = formData.get('email');
+  const apellido = formData.get('apellido');
+  const email = formData.get('email');  
 
-  // Validar datos aquí
-  console.log('Datos recibidos:', { nombre, email });
-
-  // Guardar en base de datos
-  return { success: true };
+  // Validación simple de los datos
+  if (!nombre || !apellido || !email) {
+    throw new Error('Todos los campos son obligatorios');
+  }
 }
+// --Componente principal del formulario--
+export default sendData;

@@ -1,4 +1,3 @@
-"use client"
 import Link from "next/link"
 
 export default function Navbar() {
@@ -29,6 +28,11 @@ export default function Navbar() {
         </li>
       </ul>
       </div>
+
+      <div className="flex items-center gap-2">
+                <Link className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" href="/auth/sign-up">Sign up!</Link>
+                <Link className="border border-gray-300 px-4 py-2 rounded hover:bg-gray-50" href="/auth/login">Login</Link>
+            </div>
     </nav>
   )
 }
