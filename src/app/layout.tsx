@@ -16,9 +16,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body >
+      <body className="bg-gray-200 text-gray-900">
         <Navbar />
-
 
         <main className="container mx-auto h-[calc(100vh-7rem)] flex justify-center">
 
