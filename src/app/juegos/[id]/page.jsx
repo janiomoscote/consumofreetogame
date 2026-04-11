@@ -12,7 +12,7 @@ async function Juegos({params}: any) {
         <div className="bg-slate-200 p-10 rounded-md">
             <Link src={juego.thumbnail} alt={juego.title} className="m-auto my-4"/>
             <h3 className="text-3xl font-bold">{juego.id} {juego.title}</h3>
-            <p> genero: {juego.genre} </p>
+            <p> Género: {juego.genre} </p>
         </div>
 );
 }

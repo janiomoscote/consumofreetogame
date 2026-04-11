@@ -3,14 +3,15 @@ import Link from "next/link"
 
 export default function Navbar() {
   return (
-    <nav className="bg-slate-400 mb-4 flex justify-between items-center px-20 p-3">
+    <nav className="container  bg-slate-400 mb-4 flex justify-between items-center px-20 p-3">
+      <div className="flex items-center gap-10">
       <Link href="/">
-        Todos
+        <h1 className="text-3xl font-bold">Libertad De Jugar</h1>
       </Link>
 
-      <ul>
+      <ul className="flex items-center gap-2">
         <li>
-          <Link href="/platform">
+          <Link className="border border-gray-300 px-4 py-2 rounded hover:bg-gray-50" href="/platform">
           Plataforma
           </Link>
         </li>
@@ -22,11 +23,12 @@ export default function Navbar() {
         </li>
 
          <li>
-          <Link href="/publisher">
+          <Link className="border border-gray-300 px-4 py-2 rounded hover:bg-gray-50" href="/publisher">
           Editorial
           </Link>
         </li>
       </ul>
+      </div>
     </nav>
   )
 }

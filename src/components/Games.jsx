@@ -3,10 +3,10 @@
 import Link from "next/link";
 import Image from "next/image";
 
-function Games({ games }, any) {
+function Games({ games }) {
   return (
      <ul>
-      {games.map((game, any) => (
+      {games.map((game) => (
         <Link  key={game.id} href={`/game/${game.id}`}>
         <li onClick={() => alert(game.title)} className="bg-slate-400 mb-2 p-4 rounded-md flex justify-between">
           

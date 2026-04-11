@@ -3,9 +3,15 @@
 import Image from "next/image";
 import Games from "../components/Games";
 
+interface Game {
+  id: number;
+  title: string;
+  thumbnail: string;
+  short_description: string;
+  genre: string;
+}
 
-
-async function fetchGames() {
+async function fetchGames(): Promise<Game[]> {
   const res = await fetch("https://www.freetogame.com/api/games")
   const data = await res.json()
 
@@ -16,7 +22,7 @@ export default async function Home() {
   const games = await fetchGames();
 
   return (<div className="grid grid-cols-4 gap-4">
-    {games.map((game: any) => (
+    {games.map((game: Game) => (
       <div key={game.id} className="bg-gray-800 rounded-lg p-4">
         <Image
           src={game.thumbnail}
