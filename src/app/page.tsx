@@ -1,26 +1,7 @@
-import Link from 'next/link';
 
-<<<<<<< HEAD
-export default function Home() {
-  return (
-    <nav className="container bg-slate-400 mb-4 flex justify-between items-center px-20 p-3">
-      <div className="flex items-center gap-10">
-        <Link href="/">
-          <h1 className="text-2xl font-bold">Games Store</h1>
-        </Link>
-      </div>
-
-
-      <div className="flex items-center gap-2">
-        <Link className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" href="/auth/sign-up">Sign up!</Link>
-        <Link className="border border-gray-300 px-4 py-2 rounded hover:bg-gray-50" href="/auth/login">Login</Link>
-      </div>
-    </nav>
-
-  
-=======
 
 import Image from "next/image";
+import Games from "../components/Games";
 
 
 
@@ -49,8 +30,9 @@ export default async function Home() {
         <p className="text-sm text-gray-500">Genre: {game.genre}</p>
       </div>
     ))}
+
+    <Games games={games}/>
   </div>
    
->>>>>>> parent of 37d4634 (Corrección del profesor)
   );
 }

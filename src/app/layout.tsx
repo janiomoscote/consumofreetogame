@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { UserProvider } from "./context/userContext";
-import ContactForm from "./Formulario/Form";
+import Navbar from "../components/Navbar";
+import Games from "../components/Games";
+
 
 export const metadata: Metadata = {
   title: "Games Catalog",
   description: "Ejercicio de consulta de API con Nextjs",
 };
-
 
 export default function RootLayout({
   children,
@@ -16,13 +16,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <UserProvider>
-          <main>
-            {children}
-            <ContactForm />
-          </main>
-        </UserProvider>
+      <body >
+        <Navbar />
+
+
+        <main className="container mx-auto h-[calc(100vh-7rem)] flex justify-center">
+
+          {children}
+        </main>
       </body>
     </html>
   );
