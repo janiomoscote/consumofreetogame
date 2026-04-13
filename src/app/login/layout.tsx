@@ -15,21 +15,21 @@ export default function ContactForm() {
     return (
         <div
             className="hiscreen flex items-center justify-center">
-            <form className="bg-slate-800 p-10" action={handleSubmit}>
-                <label htmlFor='title' className="font-bold text-sm">Nombre</label>
+            <form className="bg-slate-800 p-10 rounded-2xl" action={handleSubmit}>
+                <label htmlFor='title' className="font-bold text-sm text-green-400">Nombre</label>
                 <input
-                    className="border border-gray-400 p-2 w-full text-black"
+                    className="border border-gray-400 p-2 w-full text-white rounded"
                     name="nombre" type="text" placeholder="Tu nombre" required />
-                <label htmlFor='title'>Apellido</label>
+                <label htmlFor='title' className="font-bold text-sm text-green-400">Apellido</label>
                 <input
-                    className="border border-gray-400 p-2 w-full text-black"
+                    className="border border-gray-400 p-2 w-full text-white rounded"
                     name="apellido" type="text" placeholder="Tu apellido" required />
-                <label htmlFor='title'>Email</label>
+                <label htmlFor='title' className="font-bold text-sm text-green-400">Email</label>
                 <input
-                    className="border border-gray-400 p-2 w-full text-black"
+                    className="border border-gray-400 p-2 w-full text-white rounded"
                     name="email" type="email" placeholder="Tu email" required />
                 <button
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
                     type="submit">Enviar</button>
                 <p>{status}</p>
             </form>
