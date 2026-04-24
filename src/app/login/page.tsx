@@ -21,7 +21,10 @@ export default function Home() {
         }
         setuser?.setUser(newUser)
         document.cookie = `token=${newUser.token}; path=/; max-age=86400` /*tiempo de validez 24 horas"*/
-        router.push('/Dashboard')
+        // Use window.location.href instead of router.push to force a hard reload.
+        // This ensures the browser bypasses the Next.js client-side cache (which might remember the previous redirect)
+        // and forces the server and middleware to read the new cookie.
+        window.location.href = '/'
     }
     return (
 
