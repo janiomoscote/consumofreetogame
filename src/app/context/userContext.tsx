@@ -33,13 +33,11 @@ export function UserProvider({ children }: { children: ReactNode }) {
         if (user) {
             localStorage.setItem("user", JSON.stringify(user));
             // Make sure we stringify the user object for the cookie, otherwise it becomes [object Object]
-            document.cookie = `user=${JSON.stringify(user)}; path=/; max-age=86400; samesite=strict`
-            document.cookie = `token=${user.token}; path=/; max-age=86400; samesite=strict`
-        } else {
-            localStorage.removeItem("user")
-            document.cookie = "user=; path=/; max-age=0"
-            document.cookie = "token=; path=/; max-age=0"
+            document.cookie = `user=${JSON.stringify(user)}; path=/; max-age=86400`
+            document.cookie = `token=${user.token}; path=/; max-age=86400`
         }
+        // Removed the aggressive else block that clears cookies. 
+        // This prevents accidental deletion of cookies during React re-renders or strict-mode race conditions!
     }, [user, isLoaded]);
 
     return (
