@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import Navbar from "../components/Navbar";
-import Games from "../components/Games";
+import { UserProvider } from "./context/userContext";
+import "./globals.css";
+
 
 
 export const metadata: Metadata = {
@@ -17,13 +18,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body >
-        <Navbar />
+        <UserProvider>
+          <Navbar />
 
 
-        <main className="container mx-auto h-[calc(100vh-7rem)] flex justify-center">
+          <main className="container mx-auto h-[calc(100vh-7rem)] flex justify-center">
 
-          {children}
-        </main>
+            {children}
+          </main>
+        </UserProvider>
       </body>
     </html>
   );
